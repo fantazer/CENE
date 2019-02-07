@@ -1,0 +1,73 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.box
+.main-cont
+	+header()
+	.slider-wrap
+		.slider-control.slider-control--left
+			+icon("arrow-left","icon")
+		.slider-control.slider-control--right
+			+icon("arrow-right","icon")
+		.slider.slider-item
+			a(href="#" style="background-image:url('img/slide.jpg')").slider__el
+			a(href="#" style="background-image:url('img/slide.jpg')").slider__el
+			a(href="#" style="background-image:url('img/slide.jpg')").slider__el
+	.advant
+		.advant__text CENE – <br> лучший выбор
+		.advant-list
+			.advant-list__el
+				.advant-list__el-icon
+					+icon("sale","icon")
+				.advant-list__el-text Дешевле на 20-30% европейских топовых марок
+			.advant-list__el
+				.advant-list__el-icon
+					+icon("shield-check","icon")
+				.advant-list__el-text Увеличенный срок службы батареи. На 30% дольше
+			.advant-list__el
+				.advant-list__el-icon
+					+icon("snow","icon")
+				.advant-list__el-text Для эксплуатации в условиях суровой сибирской зимы
+	img(src="img/banner-text.jpg", alt="").banner
+	.content.content--white
+		.content-title Аккумуляторы CENE в России
+		p Аккумуляторы CENE в России <strong> CENE </strong> — премиальный бренд, который изначально предназначался только для рынка Японии, но затем нашел многопоклонников в России. С 2011 года успешно представлен на российском рынке. Мощные и долговечные аккумуляторы CENE выпускаются южнокорейским заводом
+			<strong>Delkor</strong>.
+		p Корпорация <strong>DELKOR</strong>была создана в 1985 года в сотрудничестве с гигантом автоиндустрии
+			<strong> General Motors </strong>. Несмотря на сравнительно молодой возраст, корпорация уверенно входит в первую тройку южнокорейских производителей по объему производства, а по надежности производимой продукции, пожалуй, является лидером среди них.
+		p В 2010 <strong> Delkor Co. </strong> стал частью <strong> Johnson Controls Inc. </strong> – мирового лидера в производстве АКБ. Компания <strong>  JCI Delkor Co. </strong> на данный момент владеет двумя заводами общей производительностью около 10 млн. АКБ в год и является поставщиком аккумуляторов для ведущих автопроизводителей мира. Девиз <strong> JCI Delkor Co. </strong>: «Быть лучшим, а не самым крупным производителем».
+		p <strong> CENE </strong> в переводе означает «Мощный!» с оттенком удивления и восхищения. Действительно, есть чем восхищаться. Необслуживаемые аккумуляторные батареи <strong> CENE </strong> являются одними из самых мощных в своем классе!
+		.read-more-wrap
+			a(href="#").read-more Читать подробнее
+
+	.filter-wrap
+		.filter__title Подбор акб cene по марке автомобиля
+		.filter-list
+			- var items = ['Марка','Модель','Год','Двигатель'];
+			each item in items
+				.filter-el
+					.filter-el__name #{item}
+					.filter-el__select
+						select.select-beauty
+							option(data-display="Веберите из списка") не выбрано
+							option корпус 1
+							option корпус 2
+							option корпус 3
+		.filter-footer
+			.filter-info * Подбор по марке автомобиля носит предварительный характер. Оптимальный вариант уточняйте непосредственно у продовцов в магазине.
+			.filter-get Подобрать акб
+
+	.subscribe
+		.subscribe-title отправим на почту прайс-лист
+		form(action="#").subscribe-form
+			input(type="text" placeholder="Ваше имя" class="input")
+			input(type="text" placeholder="Ваш E-mail" class="input")
+			input(type="submit" value="Отправить запрос" class="subscribe-form__get")
+
++footer()
+
+
+
+
+
+include ./block_html/_script.pug
