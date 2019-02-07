@@ -1,0 +1,98 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.box
+.main-cont
+	+header()
+	.content.content--white
+		.bread
+			-
+				var items = ['Главная','Пункт','Каталог'];
+			each item in items
+				a(href="#").bread__el #{item}
+		.content-title Каталог
+		p DELKOR Corporation – совместное предприятие корейской компании Delkor и американской компании Johnson Controls Inc. — мирового лидера производства автомобильных аккумуляторных батарей.
+		.catalog-toggle
+			.catalog-toggle__el.catalog-toggle__el--active Я оптовый покупатель
+			.catalog-toggle__el Я розничный покупатель
+
+	.catalog.catalog--active
+		.catalog-wrap
+			.list
+				.list-head
+					.list-head__el Модель
+					.list-head__el Емкость(А/Ч)
+					.list-head__el Емкость(А/Ч)
+					.list-head__el Вес(КГ)
+					.list-head__el Габариты(мм)
+			- for (var i=0;i<5;i++)
+				.list-title CENE Silver Asia
+				- for (var j=0;j<8;j++)
+					.list-row
+						.list-el.list-name
+							span.list-type Модель
+							span.list-val CENE Silver 70B24LS (58) ст кл
+						.list-el.list-power
+							span.list-type Емкость(А/Ч)
+							span.list-val 58
+						.list-el.list-power
+							span.list-type Емкость(А/Ч)
+							span.list-val 540
+						.list-el.list-weight
+							span.list-type Вес(КГ)
+							span.list-val 13.2
+						.list-el.list-size
+							span.list-type Вес(КГ)
+							span.list-val 237х128х202
+
+	.catalog
+		.filter-wrap
+			.filter__title Подбор акб cene по марке автомобиля
+			.filter-list
+				- var items = ['Марка','Модель','Год','Двигатель'];
+				each item in items
+					.filter-el
+						.filter-el__name #{item}
+						.filter-el__select
+							select.select-beauty
+								option(data-display="Веберите из списка") не выбрано
+								option корпус 1
+								option корпус 2
+								option корпус 3
+			.filter-footer
+				.filter-info * Подбор по марке автомобиля носит предварительный характер. Оптимальный вариант уточняйте непосредственно у продовцов в магазине.
+				.filter-get Подобрать акб
+		.goods-wrap
+			- for (var i=0;i<12;i++)
+				.goods
+					.goods-img(style="background-image:url('img/item.jpg')")
+					.goods-content
+						.goods-title CENE Silver 70B24L (58) обр
+						.goods-info
+							.goods-row
+								.goods-row__name Ёмкость (Ач)
+								.goods-row__val 58
+							.goods-row
+								.goods-row__name Стартовый ток (A)
+								.goods-row__val 540
+							.goods-row
+								.goods-row__name Полярность
+								.goods-row__val обратная (0, L)
+							.goods-row
+								.goods-row__name Габариты (мм)
+								.goods-row__val 237x128x202
+							.goods-row
+								.goods-row__name Гарантия (мес.)
+								.goods-row__val 24
+						.goods-get-wrap
+							a(href="#").goods-get Где купить
+	.subscribe
+		.subscribe-title отправим на почту прайс-лист
+		form(action="#").subscribe-form
+			input(type="text" placeholder="Ваше имя" class="input")
+			input(type="text" placeholder="Ваш E-mail" class="input")
+			input(type="submit" value="Отправить запрос" class="subscribe-form__get")
+
++footer()
+
+include ./block_html/_script.pug
