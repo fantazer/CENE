@@ -82,9 +82,17 @@ body
 	padding: 19.5% 10%
 
 .slider-wrap
+	+below(1024px)
+		margin-left: -10px
+		width calc(100% + 20px)
+	+below(640px)
+		display: none
 	position: relative
 	overflow: hidden
 .header
+	+below(1024px)
+		margin-left: -10px
+		width calc(100% + 20px)
 	f()
 	align-items: center
 	background: $dark
@@ -93,11 +101,15 @@ body
 	display: inline-block
 	margin-right: 30px
 .header__slogan
+	+below(640px)
+		display: none
 	up()
 	@extend .type--sm
 	letter-spacing 2.8px
 	color white
 .menu
+	+below(1024px)
+		display: none !important
 	f()
 	align-items: stretch
 	margin-left: auto
@@ -117,26 +129,52 @@ body
 	color white
 
 .box
+	+below(1024px)
+		display: none
 	position: absolute
 	width: 100%
 	background: #212429
 	height 345px
 
 .advant
+	+below(1200px)
+		fw()
+		margin-bottom: 20px
+	+below(768px)
+		padding: 10px
+	+below(640px)
+		padding: 20px 0 0 0
 	padding:20px 30px
 	background: #f7f7f7
 	flex(between)
 	margin-bottom: 60px
 .advant__text
+	+below(1200px)
+		width: 100%
+		margin-bottom: 20px
+		text-align: center
+		br
+			display: none
+	+below(640px)
+		font-size: 18px
 	@extend .type--main
 	font-weight 700
 	text-transform uppercase
 	color #212121
 	line-height: 1.6
 .advant-list
+	+below(1200px)
+		width: 100%
+	+below(640px)
+		fw()
 	flex(between)
 	width: 70%
 .advant-list__el
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
+		&:last-child
+			margin-bottom: 0
 	flex(mid)
 	width: 30%
 .advant-list__el-icon
@@ -149,16 +187,33 @@ body
 		size 40px
 		fill white
 .advant-list__el-text
+	+below(1024px)
+		font-size: 12px
 	up()
 	width:calc(100% - 60px)
 	font-size: 14px
 	font-weight: 700
 	line-height: 1.6
 .banner
+	+below(640px)
+		display: none
 	bg-full()
 	background-size: contain
-
+.banner--mobile
+	max-width initial!important
+	margin-left: -10px
+	width calc(100% + 20px)
+	+above(641px)
+		display: none
 .content
+	+below(1024px)
+		padding: 30px
+	+below(768px)
+		padding: 20px 10px
+	+below(640px)
+		padding: 20px 10px
+		width calc(100% + 20px)
+		margin-left: -10px
 	padding: 50px
 	ul
 		line-height: 1.6
@@ -171,6 +226,8 @@ body
 	background: #f1f1f1
 
 .content-title
+	+below(1024px)
+		margin-bottom: 20px
 	@extend .type--lg
 	font-weight 700
 	letter-spacing 1.8px
@@ -179,6 +236,8 @@ body
 	margin-bottom: 50px
 
 .read-more-wrap
+	+below(640px)
+		margin-top: 30px
 	flex(mid)
 	margin-top: 50px
 .read-more
@@ -223,12 +282,23 @@ select.select-beauty
 			text-overflow: ellipsis
 
 .filter-wrap
+	+below(1024px)
+		padding: 30px
+		margin: 30px 0
+	+below(640px)
+		padding: 20px 10px
+		margin-left: -10px
+		width:calc(100% + 20px)
 	padding: 60px 30px
 	margin: 60px 0
 	box-shadow 0 0 0 rgba(232, 232, 232, 0.11)
 	border 1px solid rgba(221, 221, 221, 0.15)
 	background-color #f7f7f7
 .filter__title
+	+below(1024px)
+		margin-bottom: 40px
+	+below(640px)
+		margin-bottom: 20px
 	@extend .type--lg
 	font-weight 700
 	text-transform uppercase
@@ -236,9 +306,18 @@ select.select-beauty
 	text-align: center
 	margin-bottom: 70px
 .filter-list
+	+below(768px)
+		fw()
+	+below(640px)
+		margin-bottom: 0
 	flex(between)
 	margin-bottom: 30px
 .filter-el
+	+below(768px)
+		width: 48%
+		margin-bottom: 20px
+	+below(640px)
+		width: 100%
 	width: 24%
 	.nice-select
 		width: 100%
@@ -250,16 +329,37 @@ select.select-beauty
 //.filter-el__select
 //.select-beauty
 .filter-footer
+	+below(640px)
+		fw()
 	flex(between)
 .filter-info
+	+below(1024px)
+		width: 60%
+	+below(768px)
+		width: 48%
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
 	@extend .type--sm
 	color #999999
 .filter-get
+	+below(768px)
+		width: 48%
+	+below(640px)
+		width: 100%
+
 	@extend .btn--md
 	@extend .btn--mark
 	width: 24%
+	padding: 15px
+
 
 .subscribe
+	+below(1024px)
+		fw()
+	+below(640px)
+		padding: 20px 0
+		margin: 30px 0
 	box-shadow 0 0 0 rgba(232, 232, 232, 0.11)
 	border 1px solid rgba(221, 221, 221, 0.15)
 	background-color #f7f7f7
@@ -267,6 +367,10 @@ select.select-beauty
 	flex(between)
 	margin: 60px 0
 .subscribe-title
+	+below(1024px)
+		width: 100%
+		margin-bottom: 30px
+		text-align: center
 	color $black
 	@extend .type--main
 	font-weight 700
@@ -274,25 +378,36 @@ select.select-beauty
 	width: 15%
 	line-height: 1.3
 .subscribe-form
+	+below(1024px)
+		width: 100%
+	+below(640px)
+		fw()
 	flex(between)
 	width: 75%
 	input
+		+below(640px)
+			width: 100%
+			margin-bottom: 20px
 		width: 32%
 
 .subscribe-form__get
+	padding: 15px
 	@extend .btn--md
 	@extend .btn--dark
 
 
 .footer
+	+below(640px)
+		font-size: 10px
+	@extend .type--sm
+	up()
 	padding: 15px
 	background: $black
 	text-align: center
-	@extend .type--sm
-	up()
 	span
 		opacity 0.4
 		color white
+		line-height: 1.4
 		letter-spacing 1.4px
 	a
 		color white
@@ -300,7 +415,7 @@ select.select-beauty
 
 .bread
 	+below(640px)
-		display: none
+		margin-bottom: 20px
 	f()
 	fw()
 	margin-bottom: 40px
@@ -328,6 +443,8 @@ select.select-beauty
 
 //.edge
 .edge__el
+	+below(640px)
+		align-items: flex-start
 	f()
 	align-items: center
 	margin-bottom: 10px
@@ -345,9 +462,15 @@ select.select-beauty
 	width calc(100% - 80px)
 
 .catalog-toggle
+	+below(768px)
+		fl()
 	flex(mid)
 	margin-top: 50px
 .catalog-toggle__el
+	+below(480px)
+		width: 100%
+		min-width 100%
+	min-width 300px
 	padding: 20px
 	border 1px solid $border-color
 	up()
@@ -362,9 +485,14 @@ select.select-beauty
 	&:hover
 		border-color $red
 	&:first-child
+		+below(768px)
+			margin-right: 0
+			margin-bottom: 20px
 		margin-right: 40px
 
 .catalog-toggle__el--active
+	&:hover
+		background: lighten($red,10)
 	background: $red
 	color white
 	border 1px solid $red
@@ -372,6 +500,11 @@ select.select-beauty
 .catalog
 	display: none
 .catalog-wrap
+	+below(768px)
+		padding: 30px 0
+		margin-top: 30px
+	+below(640px)
+		padding: 30px 0
 	background: white
 	margin-top: 60px
 	padding: 60px 0
@@ -402,6 +535,9 @@ select.select-beauty
 .list-title
 	+below(1500px)
 		padding: 5px 20px
+	+below(768px)
+		padding: 0 10px
+		margin: 20px 0
 	@extend .type--md
 	up()
 	color $black
@@ -415,7 +551,7 @@ select.select-beauty
 		padding: 5px 20px
 	+below(640px)
 		fw()
-		padding: 5px 10px
+		padding: 10px
 		padding-bottom: 10px
 		margin-bottom: -1px
 		border-bottom 1px solid $border-color
@@ -433,6 +569,7 @@ select.select-beauty
 		justify-content: space-between
 		width: 100%
 		font-size: 13px
+		margin-bottom: 3px
 	width: 20%
 	line-height: 1.4
 	&:first-child
@@ -463,9 +600,15 @@ select.select-beauty
 .goods-wrap
 	f()
 	fw()
-	margin-left: -30px
-	margin-right: -30px
+	margin-left: -10px
+	margin-right: -10px
 .goods
+	+below(1024px)
+		width: calc(100%/3 - 30px)
+	+below(640px)
+		width: calc(100%/2 - 30px)
+	+below(480px)
+		width: calc(100% - 30px)
 	margin: 0 15px 30px 15px
 	width: calc(100%/4 - 30px)
 	background: white
@@ -491,9 +634,13 @@ select.select-beauty
 	font-size: 14px
 	margin-bottom: 10px
 .goods-row__name
+	+below(768px)
+		font-size: 12px
 	opacity: .8
 
 .goods-row__val
+	+below(768px)
+		font-size: 12px
 	font-weight:600
 	color $black
 
@@ -512,3 +659,222 @@ select.select-beauty
 		color $red
 .goods-get-wrap
 	flex(mid)
+
+.location-title
+	+below(768px)
+		margin-top: 0px
+	@extend .type--md
+	letter-spacing 1.8px
+	color $black
+	margin-top: -20px
+	margin-bottom: 40px
+.location
+	+below(1024px)
+		column-count 3
+	+below(768px)
+		column-count 2
+	column-count 4
+.location-col
+	f()
+	margin-bottom: 10px
+.location-letter
+	+below(640px)
+		margin-right: 10px
+		size 20px
+		font-size:14px
+	flex(mid)
+	size 30px
+	color white
+	background: $red
+	margin-right: 30px
+	font-weight: 700
+//.location-list
+.location-el
+	+below(640px)
+		font-size: 10px
+	margin-bottom: 5px
+	color $black
+	display: block
+	&:hover
+		color $red
+.location-el--active
+	font-weight: 700
+
+//market
+.market-wrap
+	+below(768px)
+		padding: 0
+	background: white
+	padding: 60px 0
+
+.market-head
+
+	+below(1500px)
+		padding: 5px 20px
+	+below(1024px)
+		margin-bottom: 0
+	+below(640px)
+		display: none
+	f()
+	padding: 5px 50px
+	margin-bottom: 30px
+.market-head__el
+	+below(768px)
+		font-size: 12px
+		text-transform: none
+	up()
+	color #212121
+	opacity .4
+	font-size: 16px
+.market-head__el-name
+	width: 20%
+.market-head__el-adres
+	width: 60%
+.market-head__el-phone
+	+below(768px)
+		width: 25%
+	width: 20%
+
+.market-row
+	+below(1500px)
+		padding: 5px 20px
+	+below(640px)
+		fw()
+		padding: 10px
+		padding-bottom: 10px
+		margin-bottom: -1px
+		border-bottom 1px solid $border-color
+		border-top 1px solid $border-color
+	padding: 5px 50px
+	margin-bottom: 5px
+	f()
+	tr(all)
+	cp()
+	&:hover
+		box-shadow 0 3px 26px 4px rgba(112, 112, 112, 0.49)
+.market-el
+	+below(960px)
+		font-size: 16px
+	+below(640px)
+		f()
+		justify-content: space-between
+		width: 100%
+		font-size: 13px
+	+below(480px)
+		fw()
+	line-height: 1.4
+
+.market-name
+	+below(640px)
+		width: 100%
+	up()
+	width: 20%
+.market-adres
+	+below(640px)
+		width: 100%
+	width: 60%
+.market-phone
+	+below(768px)
+		width: 25%
+	+below(640px)
+		width: 100%
+	width: 20%
+//.market-power
+//.market-weight
+//.market-size
+
+.market-type
+	+below(640px)
+		display: block
+		font-weight: 600
+	+below(480px)
+		width: 100%
+		margin-bottom: 5px
+	display: none
+	width: 35%
+
+.market-val
+	+below(1024px)
+		padding: 0 4px
+	+below(640px)
+		width: 60%
+		padding: 0
+	+below(480px)
+		width: 100%
+		margin-bottom: 5px
+
+.pagination
+	fw()
+	flex(mid)
+.pagination__el
+	flex(mid)
+	tr(all)
+	box-shadow 0 0 0 rgba(232, 232, 232, 0.11)
+	border 1px solid rgba(221, 221, 221, 0.4)
+	background-color #ffffff
+	size 40px
+	margin: 4px
+	&:hover
+		background: $red
+		color white
+		border-color $red
+.pagination__el--active
+	border-color $red
+	background: $red
+	color white
+
+//mobile menu
+.head-toggle
+	+above(1025px)
+		display: none
+	size 55px
+	flex(mid)
+	cp()
+	margin-left: auto
+	.icon
+		size 25px
+		fill white
+	.icon-close
+		display: none
+.head-toggle--open
+	.icon-close
+		display: block
+	.icon-open
+		display: none
+
+.slide-menu
+	+above(1025px)
+		display: none !important
+	+below(640px)
+		top: 51px //Высота хедера
+	+below(480px)
+		width: 100%
+	background: black
+	color white
+	position: fixed
+	height: calc(100% - 50px) //Отступ хедер
+	z-index 1250
+	top 55px
+	right 0
+	width: 320px
+	transform translateX(100%)
+	tr(all)
+.slide-menu--open
+	transform translateX(0%)
+	overflow-y: auto
+.slide-menu__list-el
+	padding: 20px
+	display: block
+	color white
+	font-size: 16px
+	up()
+	tr(all)
+	border-bottom 1px solid rgba(255, 255, 255, 0.05)
+	&:hover
+		background: $red
+		color white
+.body-fix
+	position: fixed!important
+	overflow-Y: scroll!important
+	width:100%!important
+

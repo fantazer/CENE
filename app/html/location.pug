@@ -1,0 +1,99 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.box
+.main-cont
+	+header()
+	.content.content--white
+		.bread
+			-
+				var items = ['Главная','Пункт','Где купить'];
+			each item in items
+				a(href="#").bread__el #{item}
+		.content-title Где купить
+
+		.location-title Ваш город Новосибирск
+		.location
+			- for (var i=0;i<12;i++)
+				.location-col
+						.location-letter A
+						.location-list
+							.location-el
+								a(href="#").location-el Абакан
+								a(href="#").location-el.location-el--active Анжеро-Судженск
+								a(href="#").location-el Артём
+								a(href="#").location-el Ачинск
+								a(href="#").location-el.location-el--active Барнаул
+								a(href="#").location-el Белово
+								a(href="#").location-el Бердск
+
+	.market-wrap
+		.market
+			.market-head
+				.market-head__el.market-head__el-name Магазин
+				.market-head__el.market-head__el-adres Адрес магазина
+				.market-head__el.market-head__el-phone Телефон
+		- for (var j=0;j<8;j++)
+			.market-row
+				.market-el.market-name
+					span.market-type Магазин
+					span.market-val Ампер
+				.market-el.market-adres
+					span.market-type Адрес магазина
+					span.market-val Ул. Немировича Данченко, 146, МЕСТО 35 1 ЭТАЖДанченко, 146, МЕСТО 35 1 ЭТАЖ
+				.market-el.market-phone
+					span.market-type Телефон
+					span.market-val +7 (383) 287–77–41
+
+
+	.catalog
+		.filter-wrap
+			.filter__title Подбор акб cene по марке автомобиля
+			.filter-list
+				- var items = ['Марка','Модель','Год','Двигатель'];
+				each item in items
+					.filter-el
+						.filter-el__name #{item}
+						.filter-el__select
+							select.select-beauty
+								option(data-display="Веберите из списка") не выбрано
+								option корпус 1
+								option корпус 2
+								option корпус 3
+			.filter-footer
+				.filter-info * Подбор по марке автомобиля носит предварительный характер. Оптимальный вариант уточняйте непосредственно у продовцов в магазине.
+				.filter-get Подобрать акб
+		.goods-wrap
+			- for (var i=0;i<12;i++)
+			.goods
+				.goods-img(style="background-image:url('img/item.jpg')")
+				.goods-content
+					.goods-title CENE Silver 70B24L (58) обр
+					.goods-info
+						.goods-row
+							.goods-row__name Ёмкость (Ач)
+							.goods-row__val 58
+						.goods-row
+							.goods-row__name Стартовый ток (A)
+							.goods-row__val 540
+						.goods-row
+							.goods-row__name Полярность
+							.goods-row__val обратная (0, L)
+						.goods-row
+							.goods-row__name Габариты (мм)
+							.goods-row__val 237x128x202
+						.goods-row
+							.goods-row__name Гарантия (мес.)
+							.goods-row__val 24
+					.goods-get-wrap
+						a(href="#").goods-get Где купить
+	.subscribe
+		.subscribe-title отправим на почту прайс-лист
+		form(action="#").subscribe-form
+			input(type="text" placeholder="Ваше имя" class="input")
+			input(type="text" placeholder="Ваш E-mail" class="input")
+			input(type="submit" value="Отправить запрос" class="subscribe-form__get")
+
++footer()
+
+include ./block_html/_script.pug
