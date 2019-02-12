@@ -249,7 +249,8 @@ body
 	letter-spacing 2.8px
 	border-left 1px solid $border-color
 	border-right 1px solid $border-color
-
+	&:hover
+		color $red
 select.select-beauty
 	display: none!important
 
@@ -333,6 +334,8 @@ select.select-beauty
 		fw()
 	flex(between)
 .filter-info
+	+below(1440px)
+		padding-right: 20px
 	+below(1024px)
 		width: 60%
 	+below(768px)
@@ -367,10 +370,13 @@ select.select-beauty
 	flex(between)
 	margin: 60px 0
 .subscribe-title
+	+below(1400px)
+		font-size: 14px
 	+below(1024px)
 		width: 100%
 		margin-bottom: 30px
 		text-align: center
+		font-size: 20px
 	color $black
 	@extend .type--main
 	font-weight 700

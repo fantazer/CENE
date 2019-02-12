@@ -256,13 +256,13 @@ gulp.task('pug', function() {
 						cache:'true'
 				})
 				.on('error', errorhandler))
-				.pipe(prettify({
+				/*.pipe(prettify({
 						'unformatted': ['pre', 'code'],
 						'indent_with_tabs': true,
 						'preserve_newlines': true,
 						'brace_style': 'expand',
 						'end_with_newline': true
-				}))
+				}))*/
 				.pipe(gulp.dest('app/'))
 				.on('end', browserSync.reload);
 });
@@ -466,7 +466,6 @@ gulp.task('build:ftp',function(){
 				'copy:css',
 				'min:css',
 				'min:js',
-				'screenshot',
 				'img',
 				//'svg',
 				'make',
