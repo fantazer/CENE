@@ -884,3 +884,104 @@ select.select-beauty
 	overflow-Y: scroll!important
 	width:100%!important
 
+//.diler-wrap
+.content-title--clear
+	margin-bottom: 0
+.diler-el
+	+below(640px)
+		fw()
+	f()
+	align-items: stretch
+	margin-bottom: 30px
+.diler-el__map
+	+below(1024px)
+		width: 45%
+	+below(640px)
+		width: 100%
+		padding: 30% 10%
+	width: 30%
+	background: #dfdfdf
+	padding: 12% 10%
+	position: relative
+.diler-map
+	position: absolute
+	width: 100%
+	height: 100%
+	top 0
+	left 0
+.diler-el__info
+	+below(1024px)
+		width: 55%
+	+below(640px)
+		width: 100%
+		padding: 30px 15px
+	width: 70%
+	background: white
+	padding: 35px
+	box-shadow 0 0 25px rgba(234, 234, 235, 0.75)
+.diler-el__title
+	+below(640px)
+		padding-bottom: 15px
+		margin-bottom: 15px
+	@extend .type--md
+	font-weight 700
+	padding-bottom: 30px
+	margin-bottom: 30px
+	border-bottom 1px solid #eaeaeb
+	up()
+.diler-el__row
+	margin-bottom: 15px
+	up()
+	line-height: 1.6
+	&:last-child
+		margin-bottom: 0
+.diler-el__type
+	+below(640px)
+		width: 100%
+	color #a7a7a7
+	display: inline-block
+	margin-right: 5px
+//.diler-el__val
+
+.footer-map-wrap
+	+below(768px)
+		height: 300px
+	position: relative
+	padding: 5%
+
+.footer-map
+	position: absolute
+	width: 100%
+	height: 100%
+	top 0
+	left 0
+
+.footer-contact
+	+below(768px)
+		display: none
+	padding: 20px
+	background: white
+	z-index 10
+	position: relative
+	width: 350px
+	margin-left: auto
+	opacity:.9
+.footer-contact__row
+	margin-bottom: 15px
+.footer-contact__name
+	font-weight:700
+	margin-bottom: 10px
+
+.footer-contact__val
+	font-size: 16px
+	margin-bottom: 10px
+.footer-contact-get
+	margin-top: 30px
+	f()
+	align-items: center
+	font-size: 16px
+	color #135d8d
+	.icon
+		size 20px
+		fill blue
+		margin-right: 15px

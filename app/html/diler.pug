@@ -1,0 +1,36 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.box
+.main-cont
+	+header()
+	.content.content--white
+		.bread
+			-
+				var items = ['Главная','Пункт','Дилеры'];
+			each item in items
+				a(href="#").bread__el #{item}
+		.content-title.content-title--clear Дилеры
+
+	.diler-wrap
+		- for (var i=0;i<5;i++)
+			.diler-el
+				.diler-el__map
+					.diler-map
+						script(type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3AwkF1GhSDg4kZ3hDsyV_PPciU2OtbJsK4&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=true")
+				.diler-el__info
+					.diler-el__title ИП «Мельников А.Г.»
+					.diler-el__row
+						span.diler-el__type Адрес торговой точки:
+						span.diler-el__val г. Абакан, ул. Катанова, д.12/6, пов.6/2
+					.diler-el__row
+						span.diler-el__type Адрес торговой точки:
+						span.diler-el__val г. Абакан, ул. Катанова, д.12/6, пов.6/2
+					.diler-el__row
+						span.diler-el__type График работы:
+						span.diler-el__val Пн - Вс 09:00 - 17:30
+					.diler-el__row
+						span.diler-el__type Телефон:
+						span.diler-el__val 8 (3902) 32-86-16, 8 (950) 961 14-10
++footer()
+include ./block_html/_script.pug

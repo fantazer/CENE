@@ -1,3 +1,25 @@
 mixin footer()
+	.footer-map-wrap
+		.main-cont
+			.footer-contact
+				.footer-contact__row
+					.footer-contact__name Адрес:
+					.footer-contact__val г. Москва улица Ленина
+				.footer-contact__row
+					.footer-contact__name Телефон:
+					.footer-contact__val 8(495)123-12-12
+				.footer-contact__row
+					.footer-contact__name Время работы:
+					.footer-contact__val Понедельник-четверг 10:00 - 18:00
+					.footer-contact__val Понедельник-четверг 10:00 - 18:00
+					.footer-contact__val Понедельник-четверг 10:00 - 18:00
+					.footer-contact__val Понедельник-четверг 10:00 - 18:00
+				a(href="#").footer-contact-get
+					+icon("printer","icon")
+					span Распечатать карту
+		.footer-map
+			script(type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3AwkF1GhSDg4kZ3hDsyV_PPciU2OtbJsK4&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=true")
+
+
 	.footer
 		span @2018 Автомотив. Все права защищены | Продвижение сайта <a href="#">Снайпер</a>
