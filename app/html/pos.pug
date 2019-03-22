@@ -1,0 +1,39 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.box
+.main-cont
+	+header()
+	.content.content--white
+		.bread
+			-
+				var items = ['Главная','Пункт','POS-материалы'];
+			each item in items
+				a(href="#").bread__el #{item}
+		.content-title POS-материалы
+		.content-text
+			p Оригинальные и информативные pos-материалы помогают покупателю совершить правильный выбор.
+			p Вы сможете привлечь внимание покупателей к бренду CENE. Яркая форма и размещение в особо заметных местах позволяют POS-материалам выделить аккумуляторы CENE среди других АКБ на полках магазина.
+
+		.material
+			- for (var i=0;i<10;i++)
+				.material__el
+					.material__el--img-wrap
+						.material__el--img(style="background-image:url('img/pos.jpg')")
+					.material__el-cont
+						.material__el-row
+							.material__el-row-name Вид рекламных материалов
+							.material__el-row-val Воблер
+						.material__el-row
+							.material__el-row-name Размер
+							.material__el-row-val диаметр 130 мм
+	.subscribe
+		.subscribe-title отправим на почту прайс&#045;лист
+		form(action="#").subscribe-form
+			input(type="text" placeholder="Ваше имя" class="input")
+			input(type="text" placeholder="Ваш E-mail" class="input")
+			input(type="submit" value="Отправить запрос" class="subscribe-form__get")
+
++footer()
+
+include ./block_html/_script.pug
